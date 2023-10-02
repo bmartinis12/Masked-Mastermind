@@ -5,7 +5,7 @@
 /* base styles */
 
 body {
-    background: #181201;
+    background: #000404;
     @apply text-gray-500;
 }
 
@@ -26,8 +26,9 @@ p > a {
 nav {
     @apply
         border-b-2 border-accent
-        flex items-center justify-center
-        max-w-full p-4 z-10; 
+        flex items-center justify-evenly
+        max-w-full p-4 z-10
+        overflow-hidden; 
 }
 
 nav a, nav span {
@@ -36,6 +37,23 @@ nav a, nav span {
 
 nav a:hover {
     @apply text-black;
+}
+
+.logo {
+    animation: slidein 7s infinite;
+    @apply shadow-md shadow-accent rounded-xl;
+}
+
+nav > h2 {
+    white-space: nowrap;
+    @apply font-bold text-primary text-5xl;
+}
+
+@keyframes slidein {
+    0% { margin-left: -5000px; }
+    35% { margin-left: 0px; }
+    65% { margin-left: 0px; }
+    100% { margin-left: 5000px; }
 }
 
 /* intro main page section */
@@ -143,6 +161,10 @@ nav a:hover {
 
 @media (max-width: 37.5em) {
 
+    nav > h2 {
+        @apply text-3xl;
+    }
+
     .name {
         @apply flex-row gap-x-4; 
     }
@@ -185,6 +207,11 @@ nav a:hover {
 }
 
 @media (max-width: 28.0625em) {
+
+    nav > h2 {
+        @apply text-xl;
+    }
+
     .name > h2 {
         @apply text-2xl text-center;
     }
