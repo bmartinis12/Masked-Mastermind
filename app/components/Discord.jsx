@@ -9,7 +9,7 @@ export default function Discord() {
             <p>Mastermind Network offers:</p>
             <ul className="list-disc">
                 <li>Free Education</li>
-                <li>Buy/Sell Signals</li>
+                <li>Live Trades</li>
                 <li>A place to Connect with other Passionate Traders</li>
             </ul>
         </div>
