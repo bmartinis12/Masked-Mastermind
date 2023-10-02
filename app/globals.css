@@ -1,27 +1,224 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* base styles */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background: #181201;
+    @apply text-gray-500;
+}
+
+main {
+    @apply max-w-7xl mx-auto;
+}
+
+main > h2 {
+    @apply mb-4 pb-2 text-base;
+}
+
+p > a {
+    @apply text-primary underline;
+}
+
+/* nav styles */
+
+nav {
+    @apply
+        border-b-2 border-accent
+        flex items-center justify-center
+        max-w-full p-4 z-10; 
+}
+
+nav a, nav span {
+    @apply text-gray-500;
+}
+
+nav a:hover {
+    @apply text-black;
+}
+
+/* intro main page section */
+
+.intro-container {
+    @apply relative w-full;
+}
+
+.bg-video {
+    @apply relative z-0;
+}
+
+.intro {
+    @apply 
+        z-10 absolute top-0 
+        w-full h-full p-6
+        flex flex-col items-center
+        justify-center gap-y-4;
+}
+
+.name {
+    @apply flex gap-x-4; 
+}
+
+.name > h2 {
+    @apply font-bold text-primary text-5xl;
+}
+
+.info {
+    @apply flex flex-row w-3/4 justify-center;
+}
+
+.info > P {
+    @apply font-medium text-text text-3xl text-center;
+}
+
+/* Social link section */
+
+.socials-container {
+    @apply border-b-2 border-t-2 border-accent px-5 py-10;
+}
+
+.socials-container > h2 {
+    @apply text-center text-text font-medium text-3xl mb-8;
+}
+
+.social-icons {
+    @apply 
+        text-primary w-3/4 m-auto 
+        text-xl flex gap-3 
+        justify-evenly items-center;
+}
+
+.icon {
+    width: 5rem
+}
+
+/* Discord section  */
+
+.discord-container {
+    @apply px-5 py-10;
+}
+
+.discord-container > h2 {
+    @apply text-center text-text font-medium text-3xl mb-8;
+}
+
+.discord-container > h2 > span {
+    @apply text-primary;
+}
+
+.list {
+    @apply
+        w-3/4 mx-auto flex 
+        flex-col items-center;
+}
+
+.discord-container > .list > p {
+    @apply text-center text-text font-medium text-xl mt-10 mb-5;
+}
+
+.list > ul > li {
+    @apply text-text text-lg mb-3
+}
+
+/* Footer */
+
+.footer-container {
+    @apply px-5 pt-10 pb-5 border-t-2 border-accent;
+}
+
+.footer-container > p {
+    @apply text-sm
+}
+
+.footer-container > .copy-right {
+    @apply flex justify-between mt-10;
+}
+
+.footer-container > .copy-right > p {
+    @apply text-sm
+}
+
+/* Media Query */
+
+@media (max-width: 37.5em) {
+
+    .name {
+        @apply flex-row gap-x-4; 
+    }
+
+    .name > h2 {
+        @apply text-3xl text-center;
+    }
+
+    .info > P {
+        @apply text-xl
+    }
+    
+    .socials-container > h2 {
+        @apply text-2xl;
+    }
+
+    .icon {
+        width: 3rem;
+    }
+
+    .discord-icon {
+        width: 5rem
+    }
+    
+    .discord-container > h2 {
+        @apply text-2xl;
+    }
+
+    .footer-container > p {
+        @apply text-xs
+    }
+    
+    .footer-container > .copy-right {
+        @apply flex flex-col-reverse justify-between mt-10 text-center;
+    }
+    
+    .footer-container > .copy-right > p {
+        @apply text-xs mb-5
+    }
+}
+
+@media (max-width: 28.0625em) {
+    .name > h2 {
+        @apply text-2xl text-center;
+    }
+
+    .info > P {
+        @apply text-lg text-center
+    }
+
+    .socials-container > h2 {
+        @apply text-xl;
+    }
+
+    .social-icons {
+        @apply 
+            w-full;
+    }
+
+    .icon {
+        width: 2.5rem;
+    }
+
+    .discord-icon {
+        width: 5rem
+    }
+
+    .discord-container > h2 {
+        @apply text-xl;
+    }
+
+    .discord-container > .list > p {
+        @apply text-xl font-normal;
+    }
+
+    .list > ul > li {
+        @apply text-base
+    }
 }
